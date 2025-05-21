@@ -41,16 +41,9 @@
 
 <h1>Geography One Shot Quiz</h1>
 
-<div id="quiz"></div>
 
-<script>
-  // Sample questions from your PDF, with correct answers indicated
-  const questions = [
-    {
-      
-  {
     
-    <div class="question" data-correct="C">
+  <div class="question" data-correct="C">
   <p>6. Hubble's law is related to:</p>
   <button data-option="A">A. Heat</button>
   <button data-option="B">B. Sound</button>
@@ -337,56 +330,7 @@
 </div>
 
 
-  const quizContainer = document.getElementById("quiz");
-
-  questions.forEach((q, index) => {
-    const qDiv = document.createElement("div");
-    qDiv.className = "question-container";
-
-    const questionText = document.createElement("div");
-    questionText.className = "question-text";
-    questionText.textContent = `${index + 1}. ${q.question}`;
-    qDiv.appendChild(questionText);
-
-    const optionsDiv = document.createElement("div");
-    optionsDiv.className = "options";
-
-    q.options.forEach((opt, optIndex) => {
-      const optDiv = document.createElement("div");
-      optDiv.className = "option";
-      optDiv.textContent = opt.text;
-
-      // On clicking an option:
-      optDiv.onclick = () => {
-        // Remove any existing classes for all options of this question
-        Array.from(optionsDiv.children).forEach((child) => {
-          child.classList.remove("correct", "wrong");
-          child.style.pointerEvents = "auto"; // re-enable clicking if disabled
-        });
-
-        // Disable clicking once an option is selected (optional)
-        Array.from(optionsDiv.children).forEach((child) => {
-          child.style.pointerEvents = "none";
-        });
-
-        if (opt.correct) {
-          optDiv.classList.add("correct");
-        } else {
-          optDiv.classList.add("wrong");
-          // Optionally highlight the correct answer as well
-          const correctOption = Array.from(optionsDiv.children).find(
-            (child, i) => q.options[i].correct
-          );
-          if (correctOption) correctOption.classList.add("correct");
-        }
-      };
-
-      optionsDiv.appendChild(optDiv);
-    });
-
-    qDiv.appendChild(optionsDiv);
-    quizContainer.appendChild(qDiv);
-  });
+<script  src= "script.js"></script>
 </script>
 
 </body>
